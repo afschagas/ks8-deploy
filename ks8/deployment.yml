@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-docker-k8s
+  name: react-docker-k8s
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: react-docker-k8s
+  template:
+    metadata:
+      labels:
+        app: react-docker-k8s
+    spec:
+      containers:
+      - image: alexandrefsc/testeapp:v0.1
+        name: react-docker-k8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: react-docker-k8s
+  name: react-docker-k8s
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: react-docker-k8s
+  type: LoadBalancer
