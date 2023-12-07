@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <button>Teste Deploy</button>
       </header>
     </div>
   );
