@@ -15,7 +15,7 @@ spec:
         app: react-docker-k8s
     spec:
       containers:
-      - image: alexandrefsc/testeapp:v0.1
+      - image: alexandrefsc/appteste:v0.1
         name: react-docker-k8s
 ---
 apiVersion: v1
